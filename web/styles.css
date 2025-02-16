@@ -1,0 +1,182 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fc;  /* Light grayish blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Login Form container */
+.login-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;  /* Responsive max width */
+    text-align: center;
+}
+
+/* Login form title */
+.login-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+/* Input field labels */
+.login-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 6px;
+    color: #555;
+    font-weight: bold;
+}
+
+/* Text input fields */
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;  /* Ensures padding doesn't affect the width */
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus effect for inputs */
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+    border-color: #4CAF50;  /* Green border on focus */
+    outline: none;
+}
+
+/* Submit button styling */
+.login-form button {
+    width: 100%;
+    padding: 14px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button hover effect */
+.login-form button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);  /* Slight lift effect */
+}
+
+/* Button active state */
+.login-form button:active {
+    background-color: #3e8e41;
+    transform: translateY(0);  /* Reset lift effect */
+}
+
+/* Error message styling */
+.login-form div {
+    margin-top: 15px;
+    color: red;
+    font-size: 14px;
+}
+
+/* Responsive styling for small devices */
+@media screen and (max-width: 480px) {
+    .login-form {
+        padding: 20px;
+    }
+
+    .login-form h2 {
+        font-size: 20px;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"],
+    .login-form button {
+        font-size: 14px;
+    }
+}
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+/* Menu Styling */
+.menu {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    background-color: #333;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #575757;
+}
+
+/* Content Section */
+.content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.content h2 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu a {
+        padding: 12px;
+    }
+}
+
