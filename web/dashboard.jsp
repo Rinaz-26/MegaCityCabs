@@ -1,8 +1,10 @@
+<%@page import="com.sun.jdi.connect.spi.Connection"%>
+<%@page import="util.DatabaseConnection"%>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
     <h1>Welcome to Mega City Cab Booking System</h1>
@@ -17,7 +19,8 @@
 
     <div class="content">
         <h2>System Overview</h2>
-        <p>This is your dashboard, where you can manage all aspects of the cab service.</p>
+        <p>This is your dashboard, where you can manage all aspects of the cab service.</p
+        
     </div>
 </body>
 </html>

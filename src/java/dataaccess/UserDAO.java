@@ -4,7 +4,7 @@ import business.User;
 import java.sql.*;
 
 public class UserDAO {
-    private Connection connection;
+    private final Connection connection;
 
     public UserDAO(Connection connection) {
         this.connection = connection;
@@ -25,7 +25,6 @@ public class UserDAO {
                 user.setRole(rs.getString("role"));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
         }
         return user;
     }
