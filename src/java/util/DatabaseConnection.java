@@ -18,7 +18,6 @@ public class DatabaseConnection {
             // Establish the connection
             connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
         } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
         }
         return connection;
     }
