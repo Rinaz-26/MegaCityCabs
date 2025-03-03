@@ -18,6 +18,7 @@ public class CarManagementServlet1 extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
+         System.out.println("Action: " + action); 
         Connection conn = null;
         try {
             conn = DatabaseConnection.getConnection();
@@ -36,7 +37,7 @@ public class CarManagementServlet1 extends HttpServlet {
                         carDAO.addCar(car);
                     }
                     case "edit" -> {
-                        int carId = Integer.parseInt(request.getParameter("car_id"));
+                        int carId = Integer.parseInt(request.getParameter("car_Id"));
                         String carModel = request.getParameter("car_model");
                         String licensePlate = request.getParameter("license_plate");
                         String status = request.getParameter("status");
@@ -46,22 +47,23 @@ public class CarManagementServlet1 extends HttpServlet {
                         car.setLicensePlate(licensePlate);
                         car.setStatus(status);
                         carDAO.updateCar(car);
+                         break;
                     }
                     default -> {
+                         response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Unknown action: " + action);
+                        return;
                     }
                 }
             }
 
-            response.sendRedirect("carManagement..jsp"); // Corrected the redirect URL
+            response.sendRedirect("carManagement..jsp");
         } catch (SQLException e) {
-            e.printStackTrace(); // Log the exception for debugging
-            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Database error");
+            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Database error: " + e.getMessage());
         } finally {
             if (conn != null) {
                 try {
                     conn.close();
                 } catch (SQLException e) {
-                    e.printStackTrace();
                 }
             }
         }
@@ -71,25 +73,32 @@ public class CarManagementServlet1 extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if ("delete".equals(action)) {
-            int carId = Integer.parseInt(request.getParameter("car_id"));
+            int carId;
+            try {
+                carId = Integer.parseInt(request.getParameter("car_Id"));
+            } catch (NumberFormatException e) {
+                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid car ID format.");
+                return;
+            }
+
             Connection conn = null;
             try {
                 conn = DatabaseConnection.getConnection();
                 CarDAO carDAO = new CarDAO(conn);
                 carDAO.deleteCar(carId);
-                response.sendRedirect("carManagement..jsp"); // Corrected the redirect URL
-            } catch (SQLException e) {
-                e.printStackTrace(); // Log the exception for debugging
-                response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Database error");
+                response.sendRedirect("carManagement..jsp"); 
+            } catch (SQLException e) { 
+                response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Database error: " + e.getMessage());
             } finally {
                 if (conn != null) {
                     try {
                         conn.close();
                     } catch (SQLException e) {
-                        e.printStackTrace();
                     }
                 }
             }
+        } else {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Unknown action: " + action);
         }
     }
 }

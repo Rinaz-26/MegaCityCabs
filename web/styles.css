@@ -105,3 +105,12 @@ body {
         font-size: 14px;
     }
 }
+
+#error-message {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid red;
+    background-color: #f8d7da;
+    color: #721c24;
+    display: none; /* Initially hidden */
+}

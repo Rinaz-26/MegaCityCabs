@@ -43,7 +43,7 @@ public class CarDAO {
 
     // Update car
     public void updateCar(Car car) throws SQLException {
-        String query = "UPDATE cars SET car_Model = ?, license_Plate = ?, status = ? WHERE carId = ?";
+        String query = "UPDATE cars SET car_Model = ?, license_Plate = ?, status = ? WHERE car_Id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, car.getCarModel());
             stmt.setString(2, car.getLicensePlate());
@@ -55,7 +55,7 @@ public class CarDAO {
 
     // Delete car
     public void deleteCar(int carId) throws SQLException {
-        String query = "DELETE FROM cars WHERE carId = ?";
+        String query = "DELETE FROM cars WHERE car_Id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setInt(1, carId);
             stmt.executeUpdate();

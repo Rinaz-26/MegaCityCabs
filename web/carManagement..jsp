@@ -17,7 +17,7 @@
     <h2>Add/Edit Car</h2>
     <form action="CarManagementServlet1" method="post">
         <input type="hidden" name="action" id="formAction" value="add">
-        <input type="hidden" name="car_id" id="carId" value="">
+        <input type="hidden" name="car_Id" id="car_Id" value="">
         
         <label for="car_model">Car Model:</label>
         <input type="text" id="car_model" name="car_model" required><br><br>
@@ -86,7 +86,7 @@
     <script>
         function editCar(car_Id, car_Model, license_Plate, status) {
             document.getElementById("formAction").value = "edit";
-            document.getElementById("carId").value = car_Id;
+            document.getElementById("car_Id").value = car_Id;
             document.getElementById("car_model").value = car_Model;
             document.getElementById("license_plate").value = license_Plate;
             document.getElementById("status").value = status;
@@ -94,7 +94,7 @@
 
         function deleteCar(carId) {
             if (confirm("Are you sure you want to delete this car?")) {
-                window.location.href = "CarManagementServlet1?action=delete&car_id=" + carId;
+                window.location.href = "CarManagementServlet1?action=delete&car_Id=" + carId;
             }
         }
     </script>
