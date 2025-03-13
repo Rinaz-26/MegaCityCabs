@@ -6,7 +6,7 @@ public class Car {
     private String licensePlate;
     private String status;
 
-    // Getters and Setters
+    
     public int getCarId() {
         return carId;
     }
@@ -38,4 +38,5 @@ public class Car {
     public void setStatus(String status) {
         this.status = status;
     }
+
 }

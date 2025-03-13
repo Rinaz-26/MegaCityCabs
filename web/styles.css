@@ -1,7 +1,7 @@
-/* General body styling */
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f7fc;  /* Light grayish blue background */
+    background-color: #f4f7fc;  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,25 +9,25 @@ body {
     margin: 0;
 }
 
-/* Login Form container */
+
 .login-form {
     background-color: #ffffff;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;  /* Responsive max width */
+    max-width: 400px;  
     text-align: center;
 }
 
-/* Login form title */
+
 .login-form h2 {
     margin-bottom: 20px;
     color: #333;
     font-size: 24px;
 }
 
-/* Input field labels */
+
 .login-form label {
     display: block;
     text-align: left;
@@ -36,7 +36,7 @@ body {
     font-weight: bold;
 }
 
-/* Text input fields */
+
 .login-form input[type="text"],
 .login-form input[type="password"] {
     width: 100%;
@@ -44,19 +44,18 @@ body {
     margin-bottom: 18px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    box-sizing: border-box;  /* Ensures padding doesn't affect the width */
+    box-sizing: border-box;  
     font-size: 16px;
     transition: border-color 0.3s ease;
 }
 
-/* Focus effect for inputs */
 .login-form input[type="text"]:focus,
 .login-form input[type="password"]:focus {
-    border-color: #4CAF50;  /* Green border on focus */
+    border-color: #4CAF50;  
     outline: none;
 }
 
-/* Submit button styling */
+
 .login-form button {
     width: 100%;
     padding: 14px;
@@ -70,26 +69,26 @@ body {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Button hover effect */
+
 .login-form button:hover {
     background-color: #45a049;
-    transform: translateY(-2px);  /* Slight lift effect */
+    transform: translateY(-2px);  
 }
 
-/* Button active state */
+
 .login-form button:active {
     background-color: #3e8e41;
-    transform: translateY(0);  /* Reset lift effect */
+    transform: translateY(0);  
 }
 
-/* Error message styling */
+
 .login-form div {
     margin-top: 15px;
     color: red;
     font-size: 14px;
 }
 
-/* Responsive styling for small devices */
+
 @media screen and (max-width: 480px) {
     .login-form {
         padding: 20px;
@@ -112,5 +111,5 @@ body {
     border: 1px solid red;
     background-color: #f8d7da;
     color: #721c24;
-    display: none; /* Initially hidden */
+    display: none; 
 }

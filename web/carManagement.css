@@ -1,11 +1,11 @@
-/* Reset some default styles */
+
 body, h1, h2, table {
     margin: 0;
     padding: 0;
     border-collapse: collapse;
 }
 
-/* Body styles */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -14,7 +14,7 @@ body {
     padding: 20px;
 }
 
-/* Header styles */
+
 h1 {
     text-align: center;
     color: #4CAF50;
@@ -27,7 +27,7 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* Form styles */
+
 form {
     text-align: center;
     background: #fff;
@@ -67,7 +67,7 @@ input[type="submit"]:hover {
     background-color: #45a049;
 }
 
-/* Table styles */
+
 table {
     width: 100%;
     border: 1px solid #ddd;
@@ -89,7 +89,7 @@ tr:hover {
     background-color: #f1f1f1;
 }
 
-/* Action links */
+
 a {
     color: #4CAF50;
     text-decoration: none;

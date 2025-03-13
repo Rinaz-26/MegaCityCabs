@@ -12,7 +12,6 @@ public class CarDAO {
         this.connection = connection;
     }
 
-    // Add new car
     public void addCar(Car car) throws SQLException {
         String query = "INSERT INTO cars (car_Model, license_Plate, status) VALUES (?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
@@ -23,7 +22,7 @@ public class CarDAO {
         }
     }
 
-    // Get all cars
+    
     public List<Car> getAllCars() throws SQLException {
         List<Car> cars = new ArrayList<>();
         String query = "SELECT * FROM cars";
@@ -41,7 +40,7 @@ public class CarDAO {
         return cars;
     }
 
-    // Update car
+    
     public void updateCar(Car car) throws SQLException {
         String query = "UPDATE cars SET car_Model = ?, license_Plate = ?, status = ? WHERE car_Id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
@@ -53,7 +52,7 @@ public class CarDAO {
         }
     }
 
-    // Delete car
+    
     public void deleteCar(int carId) throws SQLException {
         String query = "DELETE FROM cars WHERE car_Id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {

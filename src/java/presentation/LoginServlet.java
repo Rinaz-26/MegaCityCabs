@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         super.init();
-        // Initialize the connection to the database
+        
         this.userDAO = new UserDAO(DatabaseConnection.getConnection());
     }
 
@@ -42,19 +42,19 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         
-        // Retrieve the user from the database
+       
         User user = userDAO.getUserByUsername(username);
 
-        // Check if user exists and the password is correct
+        
         if (user != null && user.getPassword() != null && user.getPassword().equals(password)) {
-            // Start a new session and store the user object
+            
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
 
-            // Redirect to the dashboard page
+            
             response.sendRedirect("dashboard.jsp");
         } else {
-            // If login fails, redirect back to login page with an error message
+           
             response.sendRedirect("login.jsp?error=true");
         }
     }

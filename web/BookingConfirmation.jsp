@@ -1,9 +1,8 @@
-<%@page import="com.sun.jdi.connect.spi.Connection"%>
-<%@page import="util.DatabaseConnection"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard</title>
+    <meta charset="ISO-8859-1">
+    <title>Booking Confirmation</title>
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
@@ -17,11 +16,9 @@
         <a href="help.jsp">Help</a>
         <a href="logout">Logout</a>
     </div>
-
+    
     <div class="content">
-        <h2>System Overview</h2>
-        <p>This is your dashboard, where you can manage all aspects of the cab service.</p
-        
-    </div>
+    <h2>Booking has been confirmed!</h2>
+    
 </body>
 </html>

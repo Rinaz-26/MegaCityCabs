@@ -9,12 +9,20 @@
 <head>
     <title>Car Management</title>
     <link rel="stylesheet" href="carManagement.css">
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-    <h1>Manage Cars</h1>
+    <h1>Welcome to Mega City Cab Booking System</h1>
 
-    <!-- Add/Edit Car Form -->
-    <h2>Add/Edit Car</h2>
+    <div class="menu">
+        <a href="carManagement..jsp">Manage Cars</a>
+        <a href="driverManagement.jsp">Manage Drivers</a>
+        <a href="BookingServlet">Create Booking</a>
+        <a href="BookingList.jsp">View Bookings</a>
+        <a href="help.jsp">Help</a>
+        <a href="logout">Logout</a>
+    </div>
+    
     <form action="CarManagementServlet1" method="post">
         <input type="hidden" name="action" id="formAction" value="add">
         <input type="hidden" name="car_Id" id="car_Id" value="">
@@ -28,14 +36,14 @@
         <label for="status">Status:</label>
         <select id="status" name="status">
             <option value="Available">Available</option>
-            <option value="Not Available">Not Available</option>
+            <option value="Booked">Booked</option>
         </select><br><br>
 
         <input type="submit" value="OK">
     </form>
 
     <br><br>
-    <!-- Display existing cars -->
+
     <h2>Existing Cars</h2>
     <table border="1">
         <thead>

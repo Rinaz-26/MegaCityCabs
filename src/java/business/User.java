@@ -6,7 +6,7 @@ public class User {
     private String password;
     private String role;
 
-    // Getters and Setters
+   
     public int getUserId() {
         return userId;
     }
